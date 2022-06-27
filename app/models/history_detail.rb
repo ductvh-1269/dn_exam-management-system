@@ -1,0 +1,2 @@
+class HistoryDetail < ApplicationRecord
+end
