@@ -1,0 +1,277 @@
+@import "bootstrap";
+@import "color.scss";
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  background-color: $white;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+}
+
+header{
+  background-color: $gray;
+  text-align: center;
+  color: white;
+}
+
+header > p > i{
+  color: orange;
+}
+
+article{
+  color: white;
+}
+
+.list{
+  float: left;
+  list-style-type: none;
+  padding-right: 3rem;
+}
+
+.ft-lst{
+  float: left;
+  list-style-type: none;
+  padding-right: 2rem;
+}
+
+.fab,.fab2{
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+
+#sologan{
+  color:white;
+  font-weight: bold;
+}
+
+.fa-grip-lines-vertical{
+  color: orange;
+}
+
+.nav-item{
+   padding-right: 40px;
+}
+
+.navbar-brand{
+   font-weight: bold;
+   margin: 0;
+   padding: 0;
+}
+
+.sub-title{
+  color: black;
+}
+
+.sub-title > h5{
+  font-weight: bold;
+  color:$red_orange;
+}
+
+#next,#prev{
+  position: relative;
+  top: -35px;
+  height: 50px;
+  width: 50px;
+}
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+#btn-learn-now{
+  border-radius: 60px;
+  width: 250px;
+  font-weight: bold;
+  font-size: 25px;
+  color:black;
+  border: 2px solid $red_orange;
+  display: inline-block;
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 250px;
+  background-color: wheat;
+}
+
+#btn-learn-now:hover{
+  background-color: $red_orange;
+}
+
+#btn-learn-now span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#btn-learn-now span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#btn-learn-now:hover span {
+  padding-right: 25px;
+}
+
+#btn-learn-now:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.footer-form{
+  width: 100%;
+  height: 35px;
+  background-color: white;
+}
+
+.footer-form>input{
+    width:80%;
+}
+
+.btn-outline-secondary{
+    color: white;
+    background-color: $red_orange;
+}
+
+.contact,.info{
+  background-color:$gray;
+  color:white;
+}
+
+ul li{
+    list-style: none;
+}
+
+.rose{
+  max-width: 500px;
+}
+
+.hr{
+  width: 70px;
+  height: 5px;
+  background-color: $red_orange;
+  margin: auto;
+}
+
+.service-icon i {
+  font-size: 50px;
+  color: $red_orange;
+}
+
+.service-div{
+  border: 1px solid $smoke_gray;
+  background-color: $light_white;
+  color: black;
+}
+
+.service-div:hover{
+  transition: 0.75s;
+  transform: scale(1.08);
+}
+
+.text-line{
+  text-align: center;
+  border-bottom: 1px solid $blue_gray;
+  line-height: 0.1em;
+}
+
+.text-line span {
+  background-color: white;
+  padding:0 10px;
+  color: $blue_gray;
+}
+
+.login:hover{
+  background-color: #e74c3c;
+  cursor: pointer;
+}
+
+.btn-login{
+  background-color: #e74c3c;
+}
+
+.course{
+  color: black;
+}
+
+.card{
+  color:black;
+  border-radius: 20px;
+}
+
+.card-course{
+  padding: 10px 0px 10px 0px !important;
+  margin: 0px !important;
+}
+
+.card-body{
+  padding-top: 10px !important;
+}
+
+.course-name{
+  font-weight: bold;
+  margin:0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 1em;
+}
+
+.card-q{
+  padding: 0px !important;
+}
+
+@media screen and (min-width: 768px){
+  aside{
+  margin-left: 2em;
+  }
+}
+
+.function-name{
+  background-color: $light_gray;
+}
+
+.function-text{
+  font-size: 2.3em;
+  font-weight: bolder;
+}
+
+.function-menu{
+  margin-bottom: 0px;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $smoke;
+  transition: opacity 0.35s ease-in;
+  opacity: 0;
+  padding-top: 80px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.card:hover .cover {
+  opacity: 0.7;
+  color: black;
+}
+
+.footer_menu{
+  font-weight: bold;
+}

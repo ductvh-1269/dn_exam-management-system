@@ -82,3 +82,4 @@ config/credentials.yml.enc
 config/database.yml
 test/
 spec/models/
+/spec/views

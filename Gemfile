@@ -4,11 +4,14 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "3.1.2"
 
 gem "bootsnap", ">= 1.4.4", require: false
+gem "bootstrap", "~>4.6"
 gem "jbuilder", "~> 2.7"
+gem "jquery-rails", "~> 4.4"
 gem "mysql2"
 gem "net-smtp", require: false
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.6"
+gem "rails-i18n"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
