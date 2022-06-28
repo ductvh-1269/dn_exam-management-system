@@ -81,5 +81,5 @@ yarn-debug.log*
 config/credentials.yml.enc
 config/database.yml
 test/
-spec/models/
+/spec/models/
 /spec/views
