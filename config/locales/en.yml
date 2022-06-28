@@ -48,3 +48,11 @@ en:
       invalid_email_password_combination: "Email or password ís not correct!"
     load_user:
       user_not_found: "User not found"
+      learn_now: Learn now
+      service: Service
+  exams:
+    question:
+      your_answer: Your Answer
+    new:
+      submit_exam: Submit
+      take_exam: Take the exam

@@ -1,0 +1,36 @@
+<div class="row mt-3 mb-3">
+  <div class="card mt-2 col-12">
+    <div class="card-body">
+      <h6 class="card-title mt-2">
+        <%= generate_question_content(index, question.content) %>
+        <hr />
+      </h6>
+      <% if question.single_select? %>
+        <% question.answers.each do |answer| %>
+          <div class="form-check">
+            <%= form.fields_for :HistoryDetails do |f| %>
+              <%= f.radio_button  question.id, answer.id %>
+            <% end %>
+            <label class="form-check-label"> <%= answer.content %></label>
+          </div>
+          <br/>
+        <% end %>
+      <% elsif question.multiple_select? %>
+        <% question.answers.each do |answer| %>
+          <div class="form-check">
+            <%= form.fields_for :HistoryDetails do |f| %>
+              <%= f.check_box  question.id, {multiple: true},answer.id %>
+            <% end %>
+            <label class="form-check-label"> <%= answer.content %></label>
+          </div>
+          <br/>
+        <% end %>
+      <% else %>
+        <div class="form-group">
+          <label><%= t ".your_answer" %></label>
+          <textarea class="form-control"  rows="3" id = <% "essay_aswer_" + question.id.to_s %>> </textarea>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

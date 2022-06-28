@@ -48,3 +48,9 @@ vi:
       invalid_email_password_combination: "Email hoặc mật khẩu không đúng!"
     load_user:
       user_not_found: "Không tìm thấy người dùng"
+  exams:
+    question:
+      your_answer: Câu trả lời của bạn
+    new:
+      take_exam: Làm bài trắc nghiệm
+      submit_exam: Nop bai

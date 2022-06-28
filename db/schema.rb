@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_29_023159) do
+ActiveRecord::Schema.define(version: 2022_06_30_052111) do
 
-  create_table "answers", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+  create_table "answers", charset: "utf8mb4", force: :cascade do |t|
     t.integer "question_id"
     t.text "content"
     t.boolean "is_correct"
@@ -20,7 +20,16 @@ ActiveRecord::Schema.define(version: 2022_06_29_023159) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "histories", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+  create_table "exam_details", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "history_id"
+    t.integer "question_id"
+    t.integer "selected_answer_id"
+    t.text "essay_answer"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "exams", charset: "utf8mb4", force: :cascade do |t|
     t.integer "user_id"
     t.integer "subject_id"
     t.datetime "spent_time"
@@ -30,31 +39,24 @@ ActiveRecord::Schema.define(version: 2022_06_29_023159) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "history_details", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.integer "history_id"
-    t.integer "question_id"
-    t.integer "selected_answer_id"
-    t.text "essay_answer"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "questions", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+  create_table "questions", charset: "utf8mb4", force: :cascade do |t|
     t.integer "subject_id"
     t.boolean "status"
-    t.integer "type"
+    t.integer "question_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "content"
   end
 
-  create_table "subjects", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+  create_table "subjects", charset: "utf8mb4", force: :cascade do |t|
     t.integer "user_id"
     t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "subject_name"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "email"
     t.string "first_name"
     t.string "last_name"
