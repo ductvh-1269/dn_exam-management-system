@@ -1,2 +1,36 @@
 vi:
-  hello: "Xin chào"
+  layouts:
+    header:
+      home: Trang chủ
+      subject: Môn học
+      about: Giới thiệu
+      contact: Liên hệ
+      language: Ngôn ngữ
+      english: English
+      vietnamese: Tiếng Việt
+      account: Tài khoản
+      log_in: Đăng nhập
+      sign_in: Đăng ký
+    footer:
+      contact_us: Contact us
+      info: If you want to update the latest information about Danang Team
+      subscribe: Subscribe
+      about_us: About Us
+      about_us_text: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        A, perferendis. Inventore accusamus totam quos nam nemo,
+        possimus beatae quibusdam dicta voluptas,
+        eligendi fugiat magni id consectetur
+        unde cumque praesentium vitae.
+      community: Community
+  static_pages:
+    home:
+      sologan: Chia sẻ Tri Thức - Khai phá tiềm năng
+      sub_sologan: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        A, perferendis. nventore accusamus totam quos nam nemo,
+        possimus beatae
+      sub_title_1: Lorem ipsum dolor sit
+      sub_title_2: Lorem ipsum dolor sit
+      sub_title_3: Lorem ipsum dolor sit
+      sub_title_4: Lorem ipsum dolor sit
+      learn_now: Học luôn
+      service: Dịch vụ
