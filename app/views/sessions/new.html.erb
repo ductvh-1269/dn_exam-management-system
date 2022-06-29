@@ -1,0 +1,26 @@
+<div class="content">
+  <div class="row function-name">
+    <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+      <p class="function-text"><%= t ".title" %></p>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-md-10 offset-md-1">
+      <%= form_for :session, url: login_path do |f| %>
+        <%= f.label :email, t(".email") %>
+        <%= f.email_field :email, class: "form-control" %>
+        <%= f.label :password, t(".password") %>
+        <%= f.password_field :password, class: "form-control" %>
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+          <span><%= t(".remember_me") %></span>
+        <% end %>
+        <div class="row">
+          <div class="col text-center">
+            <%= f.submit t(".login"), class: "btn btn-login" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
