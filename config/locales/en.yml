@@ -10,6 +10,7 @@ en:
       vietnamese: Tiếng Việt
       account: Account
       log_in: Log In
+      log_out: "Log Out"
       sign_in: Sign In
     footer:
       contact_us: Contact us
@@ -34,3 +35,16 @@ en:
       sub_title_4: Lorem ipsum dolor sit
       learn_now: Học luôn
       service: Dịch vụ
+  sessions:
+    new:
+      title: "LOGIN"
+      login: "Login"
+      btn_login: "Log in"
+      email: "Email"
+      password: "Password"
+      remember_me: "Remember me"
+      forgot_password: "Forgot password"
+    create:
+      invalid_email_password_combination: "Email or password ís not correct!"
+    load_user:
+      user_not_found: "User not found"

@@ -10,6 +10,7 @@ vi:
       vietnamese: Tiếng Việt
       account: Tài khoản
       log_in: Đăng nhập
+      log_out: "Đăng xuất"
       sign_in: Đăng ký
     footer:
       contact_us: Contact us
@@ -34,3 +35,16 @@ vi:
       sub_title_4: Lorem ipsum dolor sit
       learn_now: Học luôn
       service: Dịch vụ
+  sessions:
+    new:
+      title: "ĐĂNG NHẬP"
+      login: "Đăng nhập"
+      btn_login: "Đăng nhập"
+      email: "Email"
+      password: "Mật khẩu"
+      remember_me: "Ghi nhớ đăng nhập"
+      forgot_password: "Quên mật khẩu"
+    create:
+      invalid_email_password_combination: "Email hoặc mật khẩu không đúng!"
+    load_user:
+      user_not_found: "Không tìm thấy người dùng"
