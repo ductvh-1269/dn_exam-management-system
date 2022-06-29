@@ -1,0 +1,25 @@
+<div class="content">
+  <div class="row function-name">
+    <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+      <p class="function-text"><%= t ".title" %></p>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-md-10 offset-md-1">
+      <%= form_for @subject, url: admin_subjects_path do |f| %>
+        <%= render "shared/error_messages", object: f.object %>
+        <div class="form-group">
+          <%= f.label :name, t(".subject_name") %>
+          <span class="text-danger"> * </span>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :name, t(".subject_content") %>
+          <span class="text-danger"> * </span>
+          <%= f.text_area :content, class: "form-control" %>
+        </div>
+        <%= f.submit t(".create_subject"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

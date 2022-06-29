@@ -7,3 +7,10 @@ user:
     max_length: 50
   password:
     min_length: 6
+subject:
+  name:
+    max_50: 50
+  content:
+    max_1000: 1000
+paging:
+  subjects_per_page_15: 15
