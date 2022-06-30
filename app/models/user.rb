@@ -2,7 +2,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token
 
   has_many :subjects, dependent: :destroy
-  has_many :histories, dependent: :destroy
+  has_many :exams, dependent: :destroy
 
   enum role: {admin: 0, user: 1} # %i(admin user)
   before_save :downcase_email
@@ -26,7 +26,7 @@ class User < ApplicationRecord
              else
                BCrypt::Engine.cost
              end
-      BCrypt::Password.create string, cost: cost
+      BCrypt::Password.create string, cost:
     end
 
     def new_token
