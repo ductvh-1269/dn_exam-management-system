@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  before_action :logged_in_user, :require_admin
+  before_action :logged_in_user, :require_admin, :load_user
 
   def require_admin
     return if current_user.admin?
@@ -14,5 +14,9 @@ class AdminController < ApplicationController
     store_location
     flash[:danger] = t ".require_login"
     redirect_to login_url
+  end
+
+  def load_user
+    @user = current_user
   end
 end

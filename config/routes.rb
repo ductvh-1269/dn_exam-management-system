@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   resources :exams
   namespace :admin do
     resources :subjects, only: %i(new create)
+    resources :exams, only: %i(index show)
   end
   resources :subjects do
     resources :exams do
     end
   end
-  resources :exams, only: %i(update new)
+  resources :exams, only: %i(update new show)
 end

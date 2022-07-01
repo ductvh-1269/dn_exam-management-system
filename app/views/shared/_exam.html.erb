@@ -1,0 +1,11 @@
+<tr>
+  <td class = "text-center"><%= exam_counter +1 %> </td>
+  <% if @user.admin? %>
+    <td class = "text-center"><%= load_user_name exam %> </td>
+  <% end %>
+  <td class = "text-center"><%= exam.subject.name %> </td>
+  <td class = "text-center"><%= l(exam.created_at) %></td>
+  <td class = "text-center"><%= exam.spent_time %></td>
+  <td class = "text-center"><%= exam.score %></td>
+  <td class = "text-center"><%= link_to t(".view_details"), exam_path(exam.id) %></td>
+</tr>

@@ -12,6 +12,7 @@ vi:
       log_in: Đăng nhập
       log_out: "Đăng xuất"
       sign_in: Đăng ký
+      result: Kết quả làm bài
     footer:
       contact_us: Contact us
       info: If you want to update the latest information about Danang Team
@@ -59,6 +60,12 @@ vi:
     create:
       you_need_to_login: Bạn cần đăng nhập trước
       submit_exam: Nộp bài
+    index:
+      search: Tìm kiếm
+    show:
+      exam_date: Ngày làm bài
+      score: Điểm
+      name: Người làm
   subjects:
     index:
       title: "Bài thi"
@@ -84,3 +91,13 @@ vi:
         create_noti: "Tạo môn học thành công"
   shared:
     error: "Lỗi"
+  date:
+    formats:
+      default: "%d/%m/%Y %H:%M"
+      long: "Ngày %d tháng %m năm %Y"
+      short: "%d/%m"
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"
+      long: "Ngày %d tháng %m năm %Y, %H:%M:%S"
+      short: "%d/%m/%Y %H:%M"

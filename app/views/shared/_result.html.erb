@@ -1,0 +1,22 @@
+<div class="row mt-3 mb-3">
+  <div class="card mt-2 col-12">
+    <div class="card-body">
+      <h6 class="card-title mt-2">
+        <%= generate_question_content(index, detail.question.content) %>
+        <hr />
+      </h6>
+        <% detail.question.answers.each do |answer| %>
+          <div class="form-check">
+            <%= form.radio_button answer.question_id,"" ,disabled: true, checked: choose_answer(answer.id, detail) %>
+            <label class="form-check-label"> <%= answer.content %></label>
+          </div>
+          <br/>
+        <% end %>
+        <% if choose_answer_correct? detail %>
+          <span class = "badge badge-pill badge-success"><%= t ".correct" %></span>
+        <% else %>
+          <span class = "badge badge-pill badge-danger"><%= t ".incorrect" %></span>
+        <% end %>
+    </div>
+  </div>
+</div>

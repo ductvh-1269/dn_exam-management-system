@@ -12,6 +12,7 @@ en:
       log_in: Log In
       log_out: "Log Out"
       sign_in: Sign In
+      result: Results
     footer:
       contact_us: Contact us
       info: If you want to update the latest information about Danang Team
@@ -61,6 +62,12 @@ en:
     create:
       you_need_to_login: You need to login first
       submit_exam: Submit
+    index:
+      search: Search
+    show:
+      exam_date: Exam Date
+      score: Score
+      name: Trainee name
   subjects:
     index:
       title: "Test exam"
@@ -83,3 +90,9 @@ en:
         create_noti: "Create subject successed"
   shared:
     error: "Error"
+  time:
+    formats:
+      own: "%H:%M:%S, %d %B"
+      default: "%Y-%m-%d %H:%M"
+      long: "%d %B, %Y"
+      short: "%M"
