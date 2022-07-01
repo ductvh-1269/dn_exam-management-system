@@ -1,0 +1,11 @@
+<li class="list-group-item">
+  <div class="float-left">
+    <%= link_to subject.name, subject %>
+  </div>
+  <div class="float-right">
+    <%= link_to subject, method: :delete,
+      data: {confirm: t(".confirm_delete")} do %>
+      <i class="fa-solid fa-trash text-danger"></i>
+    <% end %>
+  </div>
+</li>

@@ -46,6 +46,7 @@ en:
       forgot_password: "Forgot password"
     create:
       invalid_email_password_combination: "Email or password ís not correct!"
+      user_not_found: "Username or password is not correct"
     load_user:
       user_not_found: "User not found"
       learn_now: Learn now
@@ -56,3 +57,23 @@ en:
     new:
       submit_exam: Submit
       take_exam: Take the exam
+  subjects:
+    index:
+      title: "Test exam"
+      create_subject: "Create new test exam"
+    new:
+      title: "Create new test exam"
+  required_admin: "Permission admin required !"
+  require_login: "Please login"
+  admin:
+    subjects:
+      new:
+        title: "Subject"
+        subject_name: "Subject name"
+        subject_content: "Subject content"
+        create_subject: "Create subject"
+      create:
+        create_failed: "Create subject failed"
+        create_noti: "Create subject successed"
+  shared:
+    error: "Error"
