@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :subjects, only: %i(new create) do
       resources :questions
     end
+    resources :exams, only: %i(index)
   end
   resources :subjects do
     resources :exams do

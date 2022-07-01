@@ -5,7 +5,7 @@ class SubjectsController < ApplicationController
 
   def index
     @pagy, @subjects = pagy(Subject.active.recent_subjects,
-                            items: Settings.paging.subjects_per_page_15)
+                            items: Settings.paging.per_page_15)
   end
 
   def show; end
