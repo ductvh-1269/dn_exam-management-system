@@ -5,32 +5,21 @@
         <%= generate_question_content(index, question.content) %>
         <hr />
       </h6>
-      <% if question.single_select? %>
+      <%= form.fields_for :exam_details, @exam.exam_details.to_a[index] do |f| %>
         <% question.answers.each do |answer| %>
           <div class="form-check">
-            <%= form.fields_for :HistoryDetails do |f| %>
-              <%= f.radio_button  question.id, answer.id %>
-            <% end %>
+              <% if question.single_select? %>
+                <%= f.radio_button :selected_answer_id, answer.id %>
+              <% elsif question.multiple_select? %>
+                <%= f.check_box  :selected_answer_id, {multiple: true},answer.id %>
+              <% else %>
+                <%= f.text_area :essay_answer, class: "form-control" %>
+              <% end %>
             <label class="form-check-label"> <%= answer.content %></label>
           </div>
           <br/>
         <% end %>
-      <% elsif question.multiple_select? %>
-        <% question.answers.each do |answer| %>
-          <div class="form-check">
-            <%= form.fields_for :HistoryDetails do |f| %>
-              <%= f.check_box  question.id, {multiple: true},answer.id %>
-            <% end %>
-            <label class="form-check-label"> <%= answer.content %></label>
-          </div>
-          <br/>
         <% end %>
-      <% else %>
-        <div class="form-group">
-          <label><%= t ".your_answer" %></label>
-          <textarea class="form-control"  rows="3" id = <% "essay_aswer_" + question.id.to_s %>> </textarea>
-        </div>
-      <% end %>
     </div>
   </div>
 </div>

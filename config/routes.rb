@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   root "static_pages#home"
-  get "histories/create"
   get "static_pages/home"
   resources :sessions, only: %i(new create destroy)
   resources :subjects, only: %i(index show)
@@ -15,4 +14,5 @@ Rails.application.routes.draw do
     resources :exams do
     end
   end
+  resources :exams, only: %i(update new)
 end
