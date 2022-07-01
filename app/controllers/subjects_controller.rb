@@ -6,6 +6,8 @@ class SubjectsController < ApplicationController
                             items: Settings.paging.subjects_per_page_15)
   end
 
+  def show; end
+
   private
 
   def load_subject
