@@ -14,3 +14,5 @@ subject:
     max_1000: 1000
 paging:
   subjects_per_page_15: 15
+exam:
+  exams_of_user_per_page_5: 5

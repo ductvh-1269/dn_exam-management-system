@@ -55,6 +55,10 @@ vi:
     new:
       take_exam: Làm bài trắc nghiệm
       submit_exam: Nộp bài
+      test_now: Bắt đầu thi
+    create:
+      you_need_to_login: Bạn cần đăng nhập trước
+      submit_exam: Nộp bài
   subjects:
     index:
       title: "Bài thi"
@@ -64,6 +68,8 @@ vi:
     show:
       title: "Môn học: "
       content: "Nội dung: "
+    subject:
+      start_exam: Làm bài thi
   required_admin: "Tài khoản phải có quyền admin !"
   require_login: "Vui lòng đăng nhập"
   admin:

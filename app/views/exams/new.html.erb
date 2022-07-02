@@ -1,2 +1,1 @@
-
-<%= button_to "Test now",{:controller => "exams", :action => "create", :subject_id => @subject.id} , :method=>:post %>
+<%= button_to t(".test_now"),  subject_exams_path(@subject.id, type: User.roles[:user]), {class: "btn btn-primary"} %>

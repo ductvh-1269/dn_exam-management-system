@@ -57,12 +57,18 @@ en:
     new:
       submit_exam: Submit
       take_exam: Take the exam
+      test_now: Bắt đầu thi
+    create:
+      you_need_to_login: You need to login first
+      submit_exam: Submit
   subjects:
     index:
       title: "Test exam"
       create_subject: "Create new test exam"
     new:
       title: "Create new test exam"
+    subject:
+      start_exam: Take a exam
   required_admin: "Permission admin required !"
   require_login: "Please login"
   admin:

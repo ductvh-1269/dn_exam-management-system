@@ -1,9 +1,15 @@
 class ExamsController < ApplicationController
   include SessionsHelper
+  before_action :logined_in?
+  before_action :load_user, only: %i(index create)
   before_action :load_subject, only: %i(new create)
-  before_action :load_user, :load_questions, :init_exam,
+  before_action :load_questions, :init_exam,
                 only: :create
   before_action :load_exam, only: :update
+
+  def index
+    @pagy, @exams = pagy(@user.exams.reverse_order, items: Settings.exams.exam_of_user_per_page_5)
+  end
 
   def new; end
 
@@ -59,10 +65,7 @@ class ExamsController < ApplicationController
   end
 
   def load_user
-    return if @user = current_user
-
-    flash[:danger] = t ".you_need_to_login"
-    redirect_to :login
+    @user = current_user
   end
 
   def exam_params
@@ -70,14 +73,14 @@ class ExamsController < ApplicationController
   end
 
   def update_details answers
-    score = 0;
+    score = 0
     (0..9).each do |i|
       next unless answer = ExamDetail.find_by(id: answers.dig(i.to_s.to_sym,
                                                               :id))
 
       answer.selected_answer_id = answers[i.to_s.to_sym][:selected_answer_id]
       answer.save!
-      score +=1 if correct_answer = Answer.find(answer.selected_answer_id).is_correct
+      score += 1 if Answer.find_by(id: answer.selected_answer_id)&.is_correct
       @exam.score = score
     end
   end
@@ -89,7 +92,9 @@ class ExamsController < ApplicationController
 
   def load_exam
     return if @exam = current_user.exams.find_by(id: params[:id])
-      flash[:danger] = t "exam_not_found"
-      redirect_to :root
+
+    flash[:danger] = t "exam_not_found"
+    redirect_to :root
   end
+
 end
