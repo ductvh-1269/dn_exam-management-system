@@ -1,7 +1,7 @@
 <li class="list-group-item">
   <div class="float-left">
     <%= link_to subject.name, subject %> |
-    <%= link_to "Lam Bai thi", new_subject_exam_path(subject_id: subject.id) %>
+    <%= link_to t(".start_exam"), new_subject_exam_path(subject_id: subject.id) %>
   </div>
   <div class="float-right">
     <%= link_to subject, method: :delete,

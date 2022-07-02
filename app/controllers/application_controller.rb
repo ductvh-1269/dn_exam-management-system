@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :set_locale, :current_user
   protect_from_forgery with: :exception
 
+
+
   private
 
   def set_locale
@@ -13,5 +15,12 @@ class ApplicationController < ActionController::Base
                   else
                     I18n.default_locale
                   end
+  end
+
+  def logined_in?
+    unless logged_in?
+      flash[:danger] = t ".you_need_to_login"
+      redirect_to :login
+    end
   end
 end
