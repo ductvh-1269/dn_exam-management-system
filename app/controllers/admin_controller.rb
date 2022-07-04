@@ -1,6 +1,8 @@
 class AdminController < ApplicationController
   before_action :logged_in_user, :require_admin
 
+  private
+
   def require_admin
     return if current_user.admin?
 

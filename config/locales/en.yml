@@ -75,5 +75,17 @@ en:
       create:
         create_failed: "Create subject failed"
         create_noti: "Create subject successed"
+    questions:
+      new:
+        title: "Create question"
+        add_answer: "Add answer"
+        question_name: "Question name"
+        btn_submit: "Create question"
+      answer_fields:
+        answer: "Answer"
+      create:
+        create_question_failed: "Create question failed"
+        create_question_successed: "Create question successed"
+        must_a_true_answer: "At least a true answer"
   shared:
     error: "Error"

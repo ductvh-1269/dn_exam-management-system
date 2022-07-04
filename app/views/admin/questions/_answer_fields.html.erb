@@ -1,0 +1,15 @@
+<div class="nested-fields d-inline">
+  <div class="float-left">
+    <%= f.label t(".answer") %>
+    <span class="text-danger"> * </span>
+    <%= f.radio_button(:is_correct, :true_answer) %>
+    <span><%= t(".if_true") %></span>
+  </div>
+  <div class="float-right">
+    <%= link_to_remove_association f do %>
+      <i class="fa-solid fa-trash text-danger"></i>
+    <% end %>
+  </div>
+  <%= f.text_area :content, class: "form-control" %>
+  <br>
+</div>
