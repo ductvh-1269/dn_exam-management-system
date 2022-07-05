@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :subjects, only: %i(index show)
   resources :exams
   namespace :admin do
-    resources :subjects, only: %i(new create)
+    resources :subjects, only: %i(new create) do
+      resources :questions
+    end
   end
   resources :subjects do
     resources :exams do

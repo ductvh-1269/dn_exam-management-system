@@ -82,5 +82,18 @@ vi:
       create:
         create_failed: "Tạo môn học thất bại"
         create_noti: "Tạo môn học thành công"
+    questions:
+      new:
+        title: "Tạo câu hỏi"
+        add_answer: "Thêm đáp án"
+        question_name: "Tên câu hỏi"
+        btn_submit: "Tạo câu hỏi"
+      answer_fields:
+        answer: "Đáp án"
+        if_true: "Tích nếu đây là đáp án đúng"
+      create:
+        create_question_failed: "Tạo câu hỏi thất bại"
+        create_question_successed: "Tạo câu hỏi thành công"
+        must_a_true_answer: "Phải có ít nhất một đáp án đúng"
   shared:
     error: "Lỗi"

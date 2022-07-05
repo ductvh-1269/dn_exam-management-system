@@ -6,6 +6,7 @@ ruby "3.1.2"
 gem "bcrypt"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap", "~>4.6"
+gem "cocoon"
 gem "config"
 gem "faker"
 gem "jbuilder", "~> 2.7"

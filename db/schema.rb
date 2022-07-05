@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_01_020409) do
+ActiveRecord::Schema.define(version: 2022_07_01_083555) do
 
   create_table "answers", charset: "utf8mb4", force: :cascade do |t|
     t.integer "question_id"
     t.text "content"
-    t.boolean "is_correct"
+    t.integer "is_correct"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2022_07_01_020409) do
 
   create_table "questions", charset: "utf8mb4", force: :cascade do |t|
     t.integer "subject_id"
-    t.boolean "status"
+    t.integer "status"
     t.integer "question_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

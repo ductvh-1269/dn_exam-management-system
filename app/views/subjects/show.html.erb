@@ -7,15 +7,18 @@
   </div>
   <div class="row mt-2">
     <div class="col-md-10 offset-md-1">
-      <ul class="list-group">
-        <div class="d-inline">
-          <div class="float-left">
+      <% if @current_user&.admin? %>
+        <ul class="list-group">
+          <div class="d-inline">
+            <div class="float-left">
+            </div>
+            <div class="float-right">
+              <%= link_to t(".create_subject"), new_admin_subject_question_path(@subject), class: "btn btn-primary" %>
+            </div>
           </div>
-          <div class="float-right">
-          </div>
-        </div>
-        <br>
-      </ul>
+          <br>
+        </ul>
+      <% end %>
     </div>
   </div>
 </div>
