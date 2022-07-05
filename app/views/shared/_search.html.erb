@@ -1,0 +1,18 @@
+<%= form_tag(exams_path, method: :get) do %>
+  <div class = "row">
+    <div class = "col-md-5 offset-md-1">
+      <div class="input-group">
+        <%= text_field_tag :query,"" ,class: "form-control", placeholder: yield(:placeholder) %>
+        <div class="input-group-append">
+          <%= submit_tag t("exams.index.search"), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <div class = "col-md-5">
+      <div class="form-group">
+        <%= select_tag(:size, options_for_select([[t(".choose_record_size"), Settings.paging.per_page_5], Settings.paging.per_page_choose_5,
+          Settings.paging.per_page_choose_10,Settings.paging.per_page_choose_15]), {class: "form-control"}) %>
+      </div>
+    </div>
+  </div>
+<% end %>

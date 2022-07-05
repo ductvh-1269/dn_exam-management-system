@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale, :current_user
   protect_from_forgery with: :exception
 
-
-
   private
 
   def set_locale
@@ -18,9 +16,13 @@ class ApplicationController < ActionController::Base
   end
 
   def logined_in?
-    unless logged_in?
-      flash[:danger] = t ".you_need_to_login"
-      redirect_to :login
-    end
+    return if logged_in?
+
+    flash[:danger] = t ".you_need_to_login"
+    redirect_to :login
+  end
+
+  def load_per_page per_page
+    params[:size] ||= per_page
   end
 end

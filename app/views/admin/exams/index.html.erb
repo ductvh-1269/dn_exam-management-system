@@ -1,0 +1,67 @@
+<div class="content">
+  <div class="row function-name">
+    <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+      <p class="function-text"><%= t ".title" %></p>
+    </div>
+  </div>
+  <div class = "row mt-3">
+    <div class = "col-md-10 offset-md-1">
+      <div class="card">
+        <div class="card-body">
+          <div class = "row mt-3">
+            <div class = "col">
+              <% provide :placeholder, t(".placeholder_search_admin") %>
+              <%= render "shared/search" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+  <div class="col-md-10 offset-md-1">
+    <div class="row mt-2">
+      <div class="col">
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-list-alt"></i> <%= t ".exams_history" %>
+          </div>
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr class="text-center table-warning">
+                <th rowspan="1" class="align-middle">No.</th>
+                <th rowspan="1" class="align-middle"><%= t ".username" %></th>
+                <th rowspan="1" class="align-middle"><%= t ".subject" %></th>
+                <th rowspan="1" class="align-middle"><%= t ".created_at" %></th>
+                <th colspan="1" class="align-middle"><%= t ".spent_time" %></th>
+                <th colspan="1" class="align-middle"><%= t ".score" %></th>
+                <th colspan="1" class="align-middle"><%= t ".action" %></th>
+              </tr>
+            </thead>
+          <tbody>
+            <%if @exams.empty? %>
+              <div class="alert alert-info mt-2" role="alert">
+                <%= t ".no_exam_have_been_yet" %>
+              </div>
+            <% else %>
+              <%= render partial:"shared/exam",collection: @exams %>
+            <% end %>
+          </tbody>
+        </table>
+        <div class="card-footer">
+          Sun-asterisk ®
+        </div>
+      </div>
+      <ul class="list-group">
+        <br>
+        <div class="d-inline">
+        <div class="float-right">
+          <%== pagy_bootstrap_nav(@pagy) if @exams%>
+        </div>
+      </div>
+    </div>
+  </ul>
+</div>
+  </div>
+</div>
+</div>
