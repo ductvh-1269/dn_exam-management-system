@@ -67,11 +67,15 @@ en:
   subjects:
     index:
       title: "Test exam"
-      create_subject: "Create new test exam"
+      btn_create_subject: "Create new test exam"
     new:
       title: "Create new test exam"
     subject:
       start_exam: Take a exam
+    show:
+      title: "Subject: "
+      content: "Content: "
+      btn_create_question: "Create question"
   required_admin: "Permission admin required !"
   require_login: "Please login"
   admin:

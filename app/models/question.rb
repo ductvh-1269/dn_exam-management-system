@@ -12,4 +12,5 @@ class Question < ApplicationRecord
   validates :content, presence: true,
             length: {maximum: Settings.question.content.max_1000}
   validates :answers, presence: true
+  scope :recent_questions, ->{order created_at: :desc}
 end

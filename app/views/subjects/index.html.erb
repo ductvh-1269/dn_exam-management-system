@@ -1,23 +1,23 @@
 <div class="content">
   <div class="row function-name">
     <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
-      <p class="function-text"><%= t ".title" %></p>
-    </div>
-  </div>
-  <div class="row mt-2">
-    <div class="col-md-10 offset-md-1">
-      <ul class="list-group">
-        <div class="d-inline">
-          <div class="float-left">
-            <%== pagy_bootstrap_nav(@pagy)%>
-          </div>
-          <div class="float-right">
-            <%= link_to t(".create_subject"), new_admin_subject_path, class: "btn btn-primary" %>
-          </div>
+      <div class="float-left">
+        <p class="function-text"><%= t ".title" %></p>
+      </div>
+      <% if @current_user&.admin? %>
+        <div class="float-right">
+          <%= link_to t(".btn_create_subject"), new_admin_subject_path, class: "btn btn-primary" %>
         </div>
-        <br>
-        <%= render @subjects %>
-      </ul>
-    </div>
+      <% end %>
+    </ul>
   </div>
+</div>
+<div class="row mt-2">
+  <div class="col-md-10 offset-md-1">
+    <ul class="list-group mb-2">
+      <%= render @subjects %>
+    </ul>
+    <%== pagy_bootstrap_nav @pagy %>
+  </div>
+</div>
 </div>
