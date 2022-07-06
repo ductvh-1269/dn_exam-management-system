@@ -100,6 +100,16 @@ en:
         create_question_failed: "Create question failed"
         create_question_successed: "Create question successed"
         must_a_true_answer: "At least a true answer"
+      edit:
+        title: "Edit question"
+        add_answer: "Add answer"
+        question_name: "Question name"
+        btn_submit: "Change"
+      update:
+        update_successed: "Update question successed"
+        must_a_true_answer: "Must at least a true answer"
+        update_failed: "Edit question failed"
+        must_a_true_answer: "At least a true answer"
   shared:
     error: "Error"
   time:

@@ -6,6 +6,7 @@ class Question < ApplicationRecord
   enum question_type: {single_select: 0, multiple_select: 1,
                        essay_question: 2}, _default: 0
   enum status: {inactive: 0, active: 1}, _default: 1
+
   accepts_nested_attributes_for :answers, allow_destroy: true,
                                 reject_if: proc{|att| att["content"].blank?}
 

@@ -19,7 +19,7 @@
           <% @questions.each do |i| %>
             <li class="list-group-item">
               <div class="float-left">
-                <%= link_to i.content, edit_admin_subject_question_path(i) %>
+                <%= link_to i.content, edit_admin_subject_question_path(i.subject_id, i.id) %>
               </div>
               <div class="float-right">
                 <%= link_to admin_subject_question_path(i), method: :delete,
