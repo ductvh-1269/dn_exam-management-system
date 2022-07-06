@@ -21,6 +21,7 @@ answer:
 paging:
   per_page_5: 5
   per_page_15: 15
+  per_page_10: 10
   per_page_choose_5: ["5", 5]
   per_page_choose_10: ["10", 10]
   per_page_choose_15: ["15", 15]

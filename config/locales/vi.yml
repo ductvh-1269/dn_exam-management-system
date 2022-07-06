@@ -65,14 +65,16 @@ vi:
   subjects:
     index:
       title: "Bài thi"
-      create_subject: "Tạo bài thi mới"
+      btn_create_subject: "Tạo bài thi mới"
     new:
       title: "Tạo bài thi mới"
-    show:
-      title: "Môn học: "
-      content: "Nội dung: "
     subject:
       start_exam: Làm bài thi
+    show:
+      title: "Môn học: %{name}"
+      content: "Nội dung: %{content}"
+      btn_create_question: "Tạo câu hỏi"
+
   required_admin: "Tài khoản phải có quyền admin !"
   require_login: "Vui lòng đăng nhập"
   admin:

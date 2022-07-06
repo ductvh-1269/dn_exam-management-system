@@ -3,10 +3,12 @@
     <%= link_to subject.name, subject %> |
     <%= link_to t(".start_exam"), new_subject_exam_path(subject_id: subject.id) %>
   </div>
-  <div class="float-right">
-    <%= link_to subject, method: :delete,
+  <% if @current_user&.admin? %>
+    <div class="float-right">
+      <%= link_to subject, method: :delete,
       data: {confirm: t(".confirm_delete")} do %>
-      <i class="fa-solid fa-trash text-danger"></i>
-    <% end %>
-  </div>
+        <i class="fa-solid fa-trash text-danger"></i>
+      <% end %>
+    </div>
+  <% end %>
 </li>

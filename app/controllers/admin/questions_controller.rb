@@ -14,7 +14,7 @@ class Admin::QuestionsController < AdminController
     end
     if @question.save
       flash[:info] = t ".create_question_successed"
-      redirect_to root_path
+      redirect_to new_admin_subject_question_path
     else
       flash.now[:danger] = t ".create_question_failed"
       render :new
