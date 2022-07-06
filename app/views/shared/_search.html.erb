@@ -9,7 +9,7 @@
       <div class="card-body">
         <div class = "row mt-3">
           <div class = "col">
-            <%= form_tag(exams_path, method: :get) do %>
+            <%= form_tag(load_exam_path(@current_user), method: :get) do %>
               <div class = "row">
                 <div class = "col-md-5 offset-md-1">
                   <div class="input-group">

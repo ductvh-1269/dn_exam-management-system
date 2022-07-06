@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :set_locale, :current_user
   protect_from_forgery with: :exception
 
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
   private
 
   def set_locale
@@ -24,5 +26,10 @@ class ApplicationController < ActionController::Base
 
   def load_per_page per_page
     params[:size] ||= per_page
+  end
+
+  def not_found
+    flash[:danger] = t "layouts.application.not_found"
+    redirect_to root_path
   end
 end

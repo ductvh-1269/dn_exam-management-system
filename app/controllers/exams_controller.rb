@@ -8,7 +8,8 @@ class ExamsController < ApplicationController
   before_action :load_exam, only: %i(update show)
 
   def index
-    @pagy, @exams = pagy @user.exams.by_key_word_with_relation_tables(params[:query]),
+    @pagy, @exams = pagy @user
+                    .exams.by_key_word_with_relation_tables(params[:query]),
                          items: load_per_page(Settings.paging.per_page_5)
   end
 
@@ -96,7 +97,9 @@ class ExamsController < ApplicationController
   end
 
   def load_exam
-    return if @exam = current_user.exams.includes(exam_details: [question: :answers]).find_by(id: params[:id])
+    return if @exam = current_user.exams
+                                  .includes(exam_details: [question: :answers])
+                                  .find_by(id: params[:id])
 
     flash[:danger] = t "exam_not_found"
     redirect_to :root
