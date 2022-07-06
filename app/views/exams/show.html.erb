@@ -1,0 +1,32 @@
+<div class="row pb-5">
+  <div class="col-md-10 offset-md-1 col-12 card-q">
+    <div class="row function-name mt-2">
+      <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3" style="color:black">
+        <p class="function-menu"> <%= t"layouts.header.home" %> / <%= t"layouts.header.subject" %></p>
+        <p class="function-text"><%= t".result" %></p>
+      </div>
+    </div>
+    <div class = "mt-3">
+      <%= generate_string(t(".exam_date"), l(@exam.created_at)) %>
+    </div>
+    <div>
+      <%= generate_string(t(".score"), @exam.score) %>
+    </div>
+    <div>
+      <%= generate_string(t(".name"), load_user_name(@exam)) %>
+    </div>
+    <div class = "row">
+      <div class="col-12 mb-3 mt-3">
+        <h1 class="course-name text-center"><%= @exam.subject_name %></h1>
+      </div>
+    </div>
+    <%= form_with do |form| %>
+    <div class = "row">
+      <div class = "col-md-12">
+        <% @exam.exam_details.each_with_index do |detail,index| %>
+          <%= render "shared/result", detail: detail, index: index, form: form %>
+        <% end%>
+      </div>
+    </div>
+    <% end %>
+</div>
