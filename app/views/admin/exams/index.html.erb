@@ -1,23 +1,6 @@
 <div class="content">
-  <div class="row function-name">
-    <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
-      <p class="function-text"><%= t ".title" %></p>
-    </div>
-  </div>
-  <div class = "row mt-3">
-    <div class = "col-md-10 offset-md-1">
-      <div class="card">
-        <div class="card-body">
-          <div class = "row mt-3">
-            <div class = "col">
-              <% provide :placeholder, t(".placeholder_search_admin") %>
-              <%= render "shared/search" %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <% provide :placeholder, t(".placeholder_search_admin") %>
+  <%= render "shared/search" %>
   <div class="row mt-2">
   <div class="col-md-10 offset-md-1">
     <div class="row mt-2">

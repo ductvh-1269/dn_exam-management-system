@@ -3,7 +3,7 @@
   <% if @user&.admin? %>
     <td class = "text-center"><%= load_user_name exam %> </td>
   <% end %>
-  <td class = "text-center"><%= exam.subject.name %> </td>
+  <td class = "text-center"><%= exam.subject_name %> </td>
   <td class = "text-center"><%= l(exam.created_at) %></td>
   <td class = "text-center"><%= exam.spent_time %></td>
   <td class = "text-center"><%= exam.score %></td>
