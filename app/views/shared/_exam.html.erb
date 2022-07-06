@@ -7,5 +7,5 @@
   <td class = "text-center"><%= l(exam.created_at) %></td>
   <td class = "text-center"><%= exam.spent_time %></td>
   <td class = "text-center"><%= exam.score %></td>
-  <td class = "text-center"><%= link_to t(".view_details"), "#" %></td>
+  <td class = "text-center"><%= link_to t(".view_details"), exam_path(exam.id) %></td>
 </tr>

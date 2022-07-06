@@ -5,14 +5,16 @@ class ExamsController < ApplicationController
   before_action :load_subject, only: %i(new create)
   before_action :load_questions, :init_exam,
                 only: :create
-  before_action :load_exam, only: :update
+  before_action :load_exam, only: %i(update show)
 
   def index
     @pagy, @exams = pagy @user.exams.by_key_word_with_relation_tables(params[:query]),
-      items: load_per_page(Settings.paging.per_page_5)
+                         items: load_per_page(Settings.paging.per_page_5)
   end
 
   def new; end
+
+  def show; end
 
   def update
     answers = params[:exam][:exam_details_attributes]
@@ -34,7 +36,9 @@ class ExamsController < ApplicationController
 
   private
   def load_questions
-    return if @questions = @subject.questions.to_a.shuffle![0..9]
+    if @subject.questions.count > Settings.exams.number_of_question
+      return @questions = @subject.questions.to_a.shuffle![0..9]
+    end
 
     flash[:danger] = t ".question_not_implemented"
     redirect_to :root
@@ -81,7 +85,7 @@ class ExamsController < ApplicationController
 
       answer.selected_answer_id = answers[i.to_s.to_sym][:selected_answer_id]
       answer.save!
-      score += 1 if Answer.find_by(id: answer.selected_answer_id)&.is_correct
+      score += 1 if Answer.find_by(id: answer.selected_answer_id)&.true_answer?
       @exam.score = score
     end
   end
@@ -92,7 +96,7 @@ class ExamsController < ApplicationController
   end
 
   def load_exam
-    return if @exam = current_user.exams.find_by(id: params[:id])
+    return if @exam = current_user.exams.includes(exam_details: [question: :answers]).find_by(id: params[:id])
 
     flash[:danger] = t "exam_not_found"
     redirect_to :root

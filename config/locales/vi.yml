@@ -62,6 +62,10 @@ vi:
       submit_exam: Nộp bài
     index:
       search: Tìm kiếm
+    show:
+      exam_date: Ngày làm bài
+      score: Điểm
+      name: Người làm
   subjects:
     index:
       title: "Bài thi"

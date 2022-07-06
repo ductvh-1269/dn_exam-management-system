@@ -64,6 +64,10 @@ en:
       submit_exam: Submit
     index:
       search: Search
+    show:
+      exam_date: Exam Date
+      score: Score
+      name: Trainee name
   subjects:
     index:
       title: "Test exam"
