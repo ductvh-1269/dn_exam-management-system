@@ -1,0 +1,33 @@
+<div class="content">
+  <%= javascript_pack_tag "onlyonecheckradio" %>
+  <div class="row function-name">
+    <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+      <p class="function-text"><%= t ".title" %></p>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-md-10 offset-md-1">
+      <%= form_for @question, url: admin_subject_question_path do |f| %>
+        <div class="form-group">
+          <%= render "shared/error_messages", object: f.object %>
+          <%= f.label t(".question_name") %>
+          <span class="text-danger"> * </span>
+          <%= f.text_field :content, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.fields_for :answers do |t| %>
+            <%= render "answer_edit", f: t %>
+          <% end %>
+          <div>
+            <%= link_to_add_association f, :answers do %>
+              <i class="fa-solid fa-plus fa-2xl"></i>
+            <% end %>
+          </div>
+        </div>
+        <div>
+          <%= f.submit t(".btn_submit"), class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

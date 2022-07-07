@@ -104,6 +104,20 @@ vi:
         create_question_failed: "Tạo câu hỏi thất bại"
         create_question_successed: "Tạo câu hỏi thành công"
         must_a_true_answer: "Phải có ít nhất một đáp án đúng"
+      edit:
+        title: "Sửa câu hỏi"
+        add_answer: "Thêm đáp án"
+        question_name: "Tên câu hỏi"
+        btn_submit: "Sửa câu hỏi"
+      update:
+        update_successed: "Sửa câu hỏi thành công"
+        must_a_true_answer: "Phải có ít nhất một đáp án đúng"
+        update_failed: "Sửa câu hỏi thất bại"
+        must_a_true_answer: "Phải có ít nhất một đáp án đúng"
+      answer_edit:
+        answer: "Đáp án"
+        if_true: "Tích nếu đây là đáp án đúng"
+        delete: "Xóa"
   shared:
     error: "Lỗi"
   date:
