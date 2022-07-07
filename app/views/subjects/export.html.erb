@@ -1,0 +1,18 @@
+<h1 class="text-center"><%= @subject.name %></h1>
+<% @arr_letter = ("A".."Z").to_a %>
+<% @subject.questions.each_with_index do |i, index_question| %>
+  <%= index_question + 1 %>.
+  <%= i.content %>
+  <div class ="mx-5">
+    <% i.answers.each_with_index do |j, index_answer| %>
+      <div class=<%= index_answer % 2 == 0 ? "float-left" : "float-right" %>>
+        <%= @arr_letter[index_answer] %>.
+        <%= j.content %>
+      </div>
+      <% if index_answer % 2 == 1 && index_answer < i.answers.count - 1 || i.answers.count == 1 %>
+        <br>
+      <% end %>
+    <% end %>
+  </div>
+  <br>
+<% end %>

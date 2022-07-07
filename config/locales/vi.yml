@@ -80,7 +80,6 @@ vi:
       content: "Nội dung: %{content}"
       btn_create_question: "Tạo câu hỏi"
       confirm_delete: "Bạn có muốn xóa câu hỏi?"
-
   required_admin: "Tài khoản phải có quyền admin !"
   require_login: "Vui lòng đăng nhập"
   admin:
@@ -96,6 +95,8 @@ vi:
       destroy:
         delete_successed: "Xóa môn học thành công"
         delete_failed: "Xóa môn học thất bại"
+      export:
+        require_questions: "Đề thi phải có ít nhất một câu hỏi"
     questions:
       new:
         title: "Tạo câu hỏi"

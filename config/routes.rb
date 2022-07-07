@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :exams
   namespace :admin do
     resources :subjects, only: %i(new create destroy) do
+      member do
+        get :export
+      end
       resources :questions
     end
     resources :exams, only: %i(index show)
