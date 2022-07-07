@@ -1,0 +1,40 @@
+<div class="content">
+  <div class="row function-name">
+    <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+      <div class="float-left">
+        <p class="function-text"><%= t ".title" %></p>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-10 offset-md-1 mt-2">
+      <div class = "row mt-3">
+        <div class = "col">
+          <h1 class = "text-center"><%= t ".import_question" %></h1>
+        </div>
+      </div>
+      <div class = "row mt-3">
+        <div class = "col-md-6">
+          <ul>
+            <li><%= t ".import_tutorial" %></li>
+            <%= form_tag  create_import_admin_subject_questions_path(@subject.id), multipart: true do %>
+              <div class="custom-file">
+                <%= hidden_field_tag @subject.id %>
+                <%= file_field_tag :file, class: "custom-file-input"%>
+                <label class="custom-file-label" for="customFile">Choose file</label>
+              </div>
+              <div class = "row">
+                <div class = "col text-center mt-3">
+                  <%= submit_tag t(".submit"), class: "btn btn-primary" %>
+                </div>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+        <div class = "col-md-6">
+          <%= image_tag("template") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

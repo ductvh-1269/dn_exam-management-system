@@ -9,10 +9,16 @@ Rails.application.routes.draw do
   resources :exams
   namespace :admin do
     resources :subjects, only: %i(new create destroy) do
-      resources :questions
+      resources :questions do
+        collection do
+          get "/import", to: "subjects#new_import", as: "import"
+          post "/import", to: "subjects#create_import", as: "create_import"
+        end
+      end
     end
     resources :exams, only: %i(index show)
     get "/search", to: "exams#search", as: :search
+    resources :exams, only: %i(index show)
   end
   resources :subjects do
     resources :exams do

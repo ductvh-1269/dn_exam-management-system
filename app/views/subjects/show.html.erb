@@ -6,6 +6,9 @@
         <h4 class="text-muted"><%= t ".content", content: @subject.content %></h4>
       </div>
       <% if @current_user&.admin? %>
+        <div class="float-right pl-3">
+          <%= link_to t(".btn_import_question"), import_admin_subject_questions_path(@subject.id), class: "btn btn-primary" %>
+        </div>
         <div class="float-right">
           <%= link_to t(".btn_create_question"), new_admin_subject_question_path(@subject), class: "btn btn-primary" %>
         </div>
