@@ -22,7 +22,7 @@
                 <%= link_to i.content, edit_admin_subject_question_path(i.subject_id, i.id) %>
               </div>
               <div class="float-right">
-                <%= link_to admin_subject_question_path(i), method: :delete,
+                <%= link_to admin_subject_question_path(@subject.id, i.id), method: :delete,
                                    data: {confirm: t(".confirm_delete")} do %>
                   <i class="fa-solid fa-trash text-danger"></i>
                 <% end %>
