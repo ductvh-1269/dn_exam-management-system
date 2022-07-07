@@ -80,6 +80,7 @@ en:
       title: "Subject: "
       content: "Content: "
       btn_create_question: "Create question"
+      confirm_delete: "Are you sure?"
   required_admin: "Permission admin required !"
   require_login: "Please login"
   admin:
@@ -114,6 +115,13 @@ en:
         must_a_true_answer: "Must at least a true answer"
         update_failed: "Edit question failed"
         must_a_true_answer: "At least a true answer"
+      answer_edit:
+        answer: "Answer"
+        if_true: "Check if true answer"
+        delete: "Delete"
+      destroy:
+        delete_successed: "Delete question successed"
+        delete_failed: "Delete question failed"
   shared:
     error: "Error"
   time:

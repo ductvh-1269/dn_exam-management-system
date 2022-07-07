@@ -1,8 +1,8 @@
 class Question < ApplicationRecord
   belongs_to :subject
   has_many :answers, dependent: :destroy
-  has_many :history_details, dependent: :destroy
-  has_many :histories, through: :history_details
+  has_many :exam_details, dependent: :destroy
+  has_many :histories, through: :exam_details
   enum question_type: {single_select: 0, multiple_select: 1,
                        essay_question: 2}, _default: 0
   enum status: {inactive: 0, active: 1}, _default: 1

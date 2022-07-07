@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2022_07_01_083555) do
 
-  create_table "answers", charset: "utf8mb4", force: :cascade do |t|
+  create_table "answers", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "question_id"
     t.text "content"
     t.integer "is_correct"
@@ -20,17 +20,16 @@ ActiveRecord::Schema.define(version: 2022_07_01_083555) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "exam_details", charset: "utf8mb4", force: :cascade do |t|
-    t.integer "exam_id"
+  create_table "exam_details", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+    t.integer "history_id"
     t.integer "question_id"
     t.integer "selected_answer_id"
     t.text "essay_answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "selected_answers_id"
   end
 
-  create_table "exams", charset: "utf8mb4", force: :cascade do |t|
+  create_table "exams", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "user_id"
     t.integer "subject_id"
     t.datetime "spent_time"
@@ -40,7 +39,7 @@ ActiveRecord::Schema.define(version: 2022_07_01_083555) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "questions", charset: "utf8mb4", force: :cascade do |t|
+  create_table "questions", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "subject_id"
     t.integer "status"
     t.integer "question_type"
@@ -49,16 +48,16 @@ ActiveRecord::Schema.define(version: 2022_07_01_083555) do
     t.string "content"
   end
 
-  create_table "subjects", charset: "utf8mb4", force: :cascade do |t|
+  create_table "subjects", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "user_id"
     t.integer "status", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
     t.string "content"
-    t.string "name", limit: 50, null: false
   end
 
-  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "email"
     t.string "first_name"
     t.string "last_name"

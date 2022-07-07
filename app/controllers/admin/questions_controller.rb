@@ -1,6 +1,6 @@
 class Admin::QuestionsController < AdminController
   before_action :load_subject, only: %i(create update)
-  before_action :load_question, only: %i(edit update)
+  before_action :load_question, only: %i(edit update destroy)
   def new
     @question = Question.new
   end
@@ -33,6 +33,15 @@ class Admin::QuestionsController < AdminController
   rescue StandardError
     flash[:danger] = t ".must_a_true_answer"
     redirect_to edit_admin_subject_question_path
+  end
+
+  def destroy
+    if @question.destroy
+      flash[:success] = t ".delete_successed"
+    else
+      flash[:danger] = t ".delete_failed"
+    end
+    redirect_to request.referer || root_url
   end
 
   private
