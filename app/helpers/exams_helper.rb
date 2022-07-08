@@ -13,6 +13,10 @@ module ExamsHelper
     user&.admin? ? :admin_exam_path : :exam_path
   end
 
+  def load_search_path user
+    user&.admin? ? :admin_search : :search
+  end
+
   def load_user_name exam
     "#{exam.user.first_name} #{exam.user.last_name}"
   end

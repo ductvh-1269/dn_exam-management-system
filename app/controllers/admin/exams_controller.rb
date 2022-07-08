@@ -1,14 +1,13 @@
 class Admin::ExamsController < AdminController
   before_action :load_exam, only: :show
-  def index
-    result = Exam.by_key_word_with_relation_tables params[:query]
-    @pagy, @exams = pagy result,
-                         items: load_per_page(Settings.paging.per_page_5)
-  end
+  before_action :load_exams, only: %i(index search)
+  def index; end
 
   def show
     render template: "exams/show"
   end
+
+  def search; end
 
   private
   def load_exam
@@ -16,5 +15,10 @@ class Admin::ExamsController < AdminController
 
     flash[:danger] = t ".exam_not_found"
     redirect_to :admin_exams
+  end
+
+  def load_exams
+    @pagy, @exams = pagy Exam.by_key_word_with_relation_tables(params[:query]),
+                         items: load_per_page(Settings.paging.per_page_5)
   end
 end

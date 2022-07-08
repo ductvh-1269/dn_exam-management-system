@@ -9,13 +9,13 @@
       <div class="card-body">
         <div class = "row mt-3">
           <div class = "col">
-            <%= form_tag(load_exam_path(@current_user), method: :get) do %>
+            <%= form_tag(load_search_path(@current_user), method: :get, remote: :true) do %>
               <div class = "row">
                 <div class = "col-md-5 offset-md-1">
                   <div class="input-group">
                     <%= text_field_tag :query,"" ,class: "form-control", placeholder: yield(:placeholder) %>
                     <div class="input-group-append">
-                      <%= submit_tag t("exams.index.search"), class: "btn btn-primary" %>
+                      <%= submit_tag t("exams.index.search"), class: "btn btn-primary"%>
                     </div>
                   </div>
                 </div>
