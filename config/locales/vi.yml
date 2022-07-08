@@ -73,7 +73,8 @@ vi:
     new:
       title: "Tạo bài thi mới"
     subject:
-      start_exam: Làm bài thi
+      start_exam: "Làm bài thi"
+      confirm_delete: "Bạn chắc chứ"
     show:
       title: "Môn học: %{name}"
       content: "Nội dung: %{content}"
@@ -92,6 +93,9 @@ vi:
       create:
         create_failed: "Tạo môn học thất bại"
         create_noti: "Tạo môn học thành công"
+      destroy:
+        delete_successed: "Xóa môn học thành công"
+        delete_failed: "Xóa môn học thất bại"
     questions:
       new:
         title: "Tạo câu hỏi"

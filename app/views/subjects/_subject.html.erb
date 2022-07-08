@@ -1,12 +1,12 @@
-<li class="list-group-item">
+<li id="subject_<%= subject.id %>", class="list-group-item">
   <div class="float-left">
     <%= link_to subject.name, subject %> |
     <%= link_to t(".start_exam"), new_subject_exam_path(subject_id: subject.id) %>
   </div>
   <% if @current_user&.admin? %>
     <div class="float-right">
-      <%= link_to subject, method: :delete,
-      data: {confirm: t(".confirm_delete")} do %>
+      <%= link_to admin_subject_path(subject.id), method: :delete,
+      data: {confirm: t(".confirm_delete")}, remote: true, class: "destroy-subject" do %>
         <i class="fa-solid fa-trash text-danger"></i>
       <% end %>
     </div>

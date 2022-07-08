@@ -1,4 +1,6 @@
 class Admin::SubjectsController < AdminController
+  before_action :load_subject, only: %i(export destroy)
+
   def new
     @subject = Subject.new
   end
@@ -11,6 +13,14 @@ class Admin::SubjectsController < AdminController
     else
       flash.now[:danger] = t ".create_failed"
       render :new
+    end
+  end
+
+  def destroy
+    if @subject.destroy
+      flash.now[:success] = t ".delete_successed"
+    else
+      flash.now[:danger] = t ".delete_failed"
     end
   end
 
