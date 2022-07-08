@@ -1,17 +1,16 @@
 class ExamsController < ApplicationController
   include SessionsHelper
   before_action :logined_in?
-  before_action :load_user, only: %i(index create)
+  before_action :load_user, only: %i(index create search)
   before_action :load_subject, only: %i(new create)
   before_action :load_questions, :init_exam,
                 only: :create
   before_action :load_exam, only: %i(update show)
+  before_action :load_exams, only: %i(index search)
 
-  def index
-    @pagy, @exams = pagy @user
-                    .exams.by_key_word_with_relation_tables(params[:query]),
-                         items: load_per_page(Settings.paging.per_page_5)
-  end
+  def index; end
+
+  def search; end
 
   def new; end
 
@@ -103,5 +102,11 @@ class ExamsController < ApplicationController
 
     flash[:danger] = t "exam_not_found"
     redirect_to :root
+  end
+
+  def load_exams
+    @pagy, @exams = pagy @user
+                    .exams.by_key_word_with_relation_tables(params[:query]),
+                         items: load_per_page(Settings.paging.per_page_5)
   end
 end
