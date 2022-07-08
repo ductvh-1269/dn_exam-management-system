@@ -76,6 +76,7 @@ en:
       title: "Create new test exam"
     subject:
       start_exam: Take a exam
+      confirm_delete: "Are you sure?"
     show:
       title: "Subject: "
       content: "Content: "
@@ -93,6 +94,9 @@ en:
       create:
         create_failed: "Create subject failed"
         create_noti: "Create subject successed"
+      destroy:
+        delete_successed: "Deleted subject"
+        delete_failed: "Delete subject failed"
     questions:
       new:
         title: "Create question"
