@@ -20,6 +20,8 @@ gem "rails-i18n"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
+gem "wicked_pdf"
+gem "wkhtmltopdf-binary"
 
 group :development, :test do
   gem "pry"
@@ -38,7 +40,10 @@ end
 
 group :test do
   gem "capybara", ">= 3.26"
+  gem "factory_bot_rails"
   gem "selenium-webdriver", ">= 4.0.0.rc1"
+  gem "simplecov"
+  gem "simplecov-rcov"
   gem "webdrivers"
 end
 
