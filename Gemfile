@@ -19,7 +19,11 @@ gem "rails", "~> 6.1.6"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
+gem "tzinfo-data"
+gem "wdm"
 gem "webpacker", "~> 5.0"
+gem "wicked_pdf"
+gem "wkhtmltopdf-binary"
 
 group :development, :test do
   gem "pry"

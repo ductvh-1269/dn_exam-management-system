@@ -5,6 +5,10 @@
   </div>
   <% if @current_user&.admin? %>
     <div class="float-right">
+      <%= link_to export_admin_subject_path(subject.id, format: :pdf),
+         method: :get do %>
+        <i class="fa-solid fa-file-pdf"></i>
+      <% end %>
       <%= link_to admin_subject_path(subject.id), method: :delete,
       data: {confirm: t(".confirm_delete")}, remote: true, class: "destroy-subject" do %>
         <i class="fa-solid fa-trash text-danger"></i>

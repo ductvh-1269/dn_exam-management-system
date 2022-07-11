@@ -97,6 +97,8 @@ en:
       destroy:
         delete_successed: "Deleted subject"
         delete_failed: "Delete subject failed"
+      export:
+        require_questions: "Subject have at least a question"
     questions:
       new:
         title: "Create question"

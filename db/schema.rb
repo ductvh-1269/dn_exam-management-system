@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_01_083555) do
+ActiveRecord::Schema.define(version: 2022_07_08_035354) do
 
   create_table "answers", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "question_id"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2022_07_01_083555) do
   create_table "exams", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "user_id"
     t.integer "subject_id"
-    t.datetime "spent_time"
+    t.integer "spent_time"
     t.integer "status"
     t.float "score"
     t.datetime "created_at", precision: 6, null: false

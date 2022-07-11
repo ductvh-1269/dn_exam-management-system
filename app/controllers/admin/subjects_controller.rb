@@ -1,5 +1,6 @@
 class Admin::SubjectsController < AdminController
   before_action :load_subject, only: %i(export destroy)
+  before_action :check_empty_answer, only: :export
 
   def new
     @subject = Subject.new
@@ -24,9 +25,38 @@ class Admin::SubjectsController < AdminController
     end
   end
 
+  def export
+    respond_to do |format|
+      format.pdf do
+        render pdf: @subject.id.to_s,
+               page_size: Settings.pdf.page_size_a4,
+               template: "subjects/export.html.erb",
+               layout: "pdf.html",
+               encoding: Settings.pdf.encoding,
+               lowquality: true,
+               dpi: Settings.pdf.dpi_75
+      end
+    end
+  end
+
   private
 
   def subject_params
     params.require(:subject).permit :name, :content
+  end
+
+  def load_subject
+    @subject = Subject.find_by id: params[:id]
+    return if @subject
+
+    flash[:danger] = t(".find_failed")
+    redirect_to root_path
+  end
+
+  def check_empty_answer
+    return if @subject.questions.count > 1
+
+    flash[:danger] = t(".require_questions")
+    redirect_to subjects_path
   end
 end
