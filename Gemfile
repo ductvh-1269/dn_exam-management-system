@@ -29,6 +29,8 @@ group :development, :test do
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
+  gem "shoulda-matchers"
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -40,7 +42,6 @@ end
 
 group :test do
   gem "capybara", ">= 3.26"
-  gem "factory_bot_rails"
   gem "selenium-webdriver", ">= 4.0.0.rc1"
   gem "simplecov"
   gem "simplecov-rcov"

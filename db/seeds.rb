@@ -14,20 +14,19 @@ User.create!(
   password_confirmation: "123123",
   role: 1
 )
-50.times do |n|
+10.times do |n|
   subject_name = "Môn học của " + Faker::Name.name
-  user_id = 1
   Subject.create!(
-    user_id: user_id,
+    user_id: User.first.id,
     content: "Đây là content thứ #{n+1}",
     name: subject_name
   )
 end
-50.times do |n|
+10.times do |n|
   subject_name = "Môn học của " + Faker::Name.name
   user_id = 1
   Subject.create!(
-    user_id: user_id,
+    user_id: User.first.id,
     content: "Đây là content thứ #{n+1}",
     status: false,
     name: subject_name
