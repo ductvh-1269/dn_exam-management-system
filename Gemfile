@@ -24,13 +24,13 @@ gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 
 group :development, :test do
+  gem "factory_bot_rails"
   gem "pry"
   gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
   gem "shoulda-matchers"
-  gem "factory_bot_rails"
 end
 
 group :development do
@@ -42,6 +42,8 @@ end
 
 group :test do
   gem "capybara", ">= 3.26"
+  gem "database_cleaner-active_record"
+  gem "rails-controller-testing"
   gem "selenium-webdriver", ">= 4.0.0.rc1"
   gem "simplecov"
   gem "simplecov-rcov"

@@ -9,7 +9,7 @@ class Admin::SubjectsController < AdminController
   def create
     @subject = @current_user.subjects.build subject_params
     if @subject.save
-      flash[:info] = t ".create_noti"
+      flash[:info] = t ".create_success"
       redirect_to @subject
     else
       flash.now[:danger] = t ".create_failed"
@@ -54,7 +54,7 @@ class Admin::SubjectsController < AdminController
   end
 
   def check_empty_answer
-    return if @subject.questions.count > 1
+    return if @subject.questions.size >= 1
 
     flash[:danger] = t(".require_questions")
     redirect_to subjects_path

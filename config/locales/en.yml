@@ -91,6 +91,7 @@ en:
         subject_name: "Subject name"
         subject_content: "Subject content"
         create_subject: "Create subject"
+        require_login: "Please login"
       create:
         create_failed: "Create subject failed"
         create_noti: "Create subject successed"
