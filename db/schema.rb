@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_08_035354) do
+ActiveRecord::Schema.define(version: 2022_07_12_073507) do
 
   create_table "answers", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "question_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_07_08_035354) do
   end
 
   create_table "exam_details", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.integer "history_id"
+    t.integer "exam_id"
     t.integer "question_id"
     t.integer "selected_answer_id"
     t.text "essay_answer"

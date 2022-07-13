@@ -45,6 +45,7 @@ group :test do
   gem "selenium-webdriver", ">= 4.0.0.rc1"
   gem "simplecov"
   gem "simplecov-rcov"
+  gem "shoulda-matchers"
   gem "webdrivers"
 end
 

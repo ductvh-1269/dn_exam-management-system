@@ -32,3 +32,12 @@ end
     name: subject_name
   )
 end
+50.times do |n|
+  user_id = n%2 + 1
+  Exam.create!(
+    user_id: user_id,
+    subject_id: (n + 1),
+    spent_time: 120,
+    score: n%11
+  )
+end
