@@ -89,9 +89,10 @@ vi:
         subject_name: "Tên môn học"
         subject_content: "Nội dung"
         create_subject: "Tạo môn học"
+        require_login: "Vui lòng đăng nhập"
       create:
         create_failed: "Tạo môn học thất bại"
-        create_noti: "Tạo môn học thành công"
+        create_success: "Tạo môn học thành công"
       destroy:
         delete_successed: "Xóa môn học thành công"
         delete_failed: "Xóa môn học thất bại"
