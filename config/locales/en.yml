@@ -112,6 +112,7 @@ en:
         create_question_failed: "Create question failed"
         create_question_successed: "Create question successed"
         must_a_true_answer: "At least a true answer"
+        subject_not_found: "Subject not found"
       edit:
         title: "Edit question"
         add_answer: "Add answer"
@@ -121,7 +122,7 @@ en:
         update_successed: "Update question successed"
         must_a_true_answer: "Must at least a true answer"
         update_failed: "Edit question failed"
-        must_a_true_answer: "At least a true answer"
+        question_not_found: "Question not found"
       answer_edit:
         answer: "Answer"
         if_true: "Check if true answer"

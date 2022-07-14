@@ -55,14 +55,14 @@ class Admin::QuestionsController < AdminController
   def load_subject
     return if @subject = Subject.find_by(id: params[:subject_id])
 
-    flash[:danger] = t ".resource_not_found"
+    flash[:danger] = t ".subject_not_found"
     redirect_to :root
   end
 
   def load_question
     return if @question = Question.find_by(id: params[:id])
 
-    flash[:danger] = t ".resource_not_found"
+    flash[:danger] = t ".question_not_found"
     redirect_to :root
   end
 

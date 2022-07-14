@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :answer do
-    question
+    association :question
     content {Faker::Company.name}
   end
 end
