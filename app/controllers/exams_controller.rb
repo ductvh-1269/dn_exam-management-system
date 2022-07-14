@@ -25,8 +25,8 @@ class ExamsController < ApplicationController
         @exam.save!
       end
       flash[:success] = t ".exam_done"
-    rescue StandardError => e
-      flash[:danger] = e
+    rescue StandardError
+      flash[:danger] = t "submit_err"
     ensure
       redirect_to :root
     end
@@ -45,7 +45,9 @@ class ExamsController < ApplicationController
   end
 
   def load_subject
+
     return if @subject = Subject.find_by(id: params[:subject_id])
+
 
     flash[:danger] = t ".resource_not_found"
     redirect_to :root
@@ -73,9 +75,9 @@ class ExamsController < ApplicationController
     @user = current_user
   end
 
-  def exam_params
-    params.require(:exam).permit(:user_id, :subject_id, :id)
-  end
+  # def exam_params
+  #   params.require(:exam).permit(:user_id, :subject_id, :id)
+  # end
 
   def update_details answers
     score = 0
@@ -90,10 +92,10 @@ class ExamsController < ApplicationController
     end
   end
 
-  def user_not_correct
-    flash[:danger] = t ".user_not_correct"
-    redirect_to :root
-  end
+  # def user_not_correct
+  #   flash[:danger] = t ".user_not_correct"
+  #   redirect_to :root
+  # end
 
   def load_exam
     return if @exam = current_user.exams

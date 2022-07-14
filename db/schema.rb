@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_12_073507) do
+ActiveRecord::Schema.define(version: 2022_07_13_160347) do
 
   create_table "answers", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "question_id"
@@ -23,10 +23,13 @@ ActiveRecord::Schema.define(version: 2022_07_12_073507) do
   create_table "exam_details", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "exam_id"
     t.integer "question_id"
-    t.integer "selected_answer_id"
     t.text "essay_answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "answers_id"
+    t.bigint "selected_answer_id"
+    t.index ["answers_id"], name: "index_exam_details_on_answers_id"
+    t.index ["selected_answer_id"], name: "index_exam_details_on_selected_answer_id"
   end
 
   create_table "exams", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
@@ -69,4 +72,5 @@ ActiveRecord::Schema.define(version: 2022_07_12_073507) do
     t.string "remember_digest"
   end
 
+  add_foreign_key "exam_details", "answers", column: "selected_answer_id"
 end
