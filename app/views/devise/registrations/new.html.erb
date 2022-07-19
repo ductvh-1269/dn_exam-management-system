@@ -1,0 +1,47 @@
+<div class="content">
+  <div class="row function-name">
+    <div class="col-md-10 offset-md-1 col-12 pt-3 pb-3">
+      <p class="function-menu">Trang chủ / Đăng ký</p>
+      <p class="function-text">ĐĂNG KÝ TÀI KHOẢN</p>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-md-10 offset-md-1 col-12 border">
+      <%= form_for(@user, url: user_registration_path, method: :post) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="row mt-2">
+          <div class="col-md-6 col-12 form-group">
+            <%= f.label :first_name, t(".last_name") %>
+            <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+          </div>
+          <div class="col-md-6 col-12 form-group">
+            <%= f.label :last_name, t(".last_name") %>
+            <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class=" col-12 form-group">
+            <label>Email</label>
+            <%= f.email_field :email, class: "form-control", require: true %>
+            <small class="form-text text-muted">Email không được để trống</small>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-6 col-12 form-group">
+            <label>Mật khẩu</label>
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+          </div>
+          <div class="col-md-6 col-12 form-group">
+            <label for="">Nhập lại mật khẩu</label>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col text-center">
+            <%= f.submit t("global.register"), class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

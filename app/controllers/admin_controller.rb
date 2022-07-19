@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  before_action :logged_in_user, :require_admin, :load_user
+  before_action :authenticate_admin!, :require_admin, :load_user
 
   private
 
@@ -11,7 +11,7 @@ class AdminController < ApplicationController
   end
 
   def logged_in_user
-    return if logged_in?
+    return if user_signed_in?
 
     store_location
     flash[:danger] = t ".require_login"
