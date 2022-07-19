@@ -151,7 +151,7 @@ RSpec.describe ExamsController, type: :controller do
       end
 
       it "create an exam do" do
-        expect(assigns(:exam).exam_details.length).to eq 5
+        expect(flash[:danger]).to eq I18n.t("exams.update.exam_done")
       end
     end
   end

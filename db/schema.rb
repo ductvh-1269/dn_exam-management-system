@@ -26,9 +26,7 @@ ActiveRecord::Schema.define(version: 2022_07_13_160347) do
     t.text "essay_answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "answers_id"
     t.bigint "selected_answer_id"
-    t.index ["answers_id"], name: "index_exam_details_on_answers_id"
     t.index ["selected_answer_id"], name: "index_exam_details_on_selected_answer_id"
   end
 
