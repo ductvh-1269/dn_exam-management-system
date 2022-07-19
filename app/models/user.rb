@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-   :rememberable, :validatable, :recoverable, :confirmable
+         :rememberable, :validatable, :recoverable, :confirmable
   # attr_accessor :remember_token
   after_initialize :init
 
@@ -20,7 +20,7 @@ class User < ApplicationRecord
   validates :password, presence: true,
     length: {minimum: Settings.user.password.min_length},
     if: :password, allow_nil: true
- # validates :role, presence: true
+  # validates :role, presence: true
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost

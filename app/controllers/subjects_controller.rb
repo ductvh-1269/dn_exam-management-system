@@ -1,4 +1,5 @@
 class SubjectsController < ApplicationController
+  load_and_authorize_resource
   before_action :load_subject, only: :show
 
   def show

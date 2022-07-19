@@ -1,5 +1,5 @@
 class Admin::SubjectsController < AdminController
-  before_action :load_subject, only: %i(export destroy)
+  load_and_authorize_resource
   before_action :check_empty_answer, only: :export
 
   def new

@@ -74,6 +74,7 @@ GEM
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
+    cancancan (3.4.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -363,6 +364,7 @@ DEPENDENCIES
   bcrypt
   bootsnap (>= 1.4.4)
   bootstrap (~> 4.6)
+  cancancan
   capybara (>= 3.26)
   cocoon
   config

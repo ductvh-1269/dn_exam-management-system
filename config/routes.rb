@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root "static_pages#home"
   get "/search", to: "exams#search", as: :search
-  resources :sessions, only: %i(new create destroy)
   resources :subjects, only: %i(index show)
   resources :exams
   namespace :admin do

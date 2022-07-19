@@ -1,24 +1,11 @@
 class AdminController < ApplicationController
-  before_action :authenticate_admin!, :require_admin, :load_user
+  before_action :authenticate_user!
+  authorize_resource class: false
 
   private
-
-  def require_admin
-    return if current_user.admin?
-
-    flash[:danger] = t "required_admin"
-    redirect_to subjects_path
-  end
-
-  def logged_in_user
-    return if user_signed_in?
-
-    store_location
-    flash[:danger] = t ".require_login"
-    redirect_to login_url
-  end
-
-  def load_user
-    @user = current_user
+  rescue_from CanCan::AccessDenied do |exception|
+    respond_to do |format|
+      format.html{redirect_to root_path, alert: exception.message}
+    end
   end
 end
