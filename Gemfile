@@ -6,9 +6,9 @@ ruby "3.1.2"
 gem "bcrypt"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap", "~>4.6"
-gem "capybara", ">= 3.26"
 gem "cocoon"
 gem "config"
+gem "devise"
 gem "faker"
 gem "jbuilder", "~> 2.7"
 gem "jquery-rails", "~> 4.4"
@@ -17,7 +17,6 @@ gem "net-smtp", require: false
 gem "pagy"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.6"
-gem "rails-controller-testing"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
@@ -49,7 +48,6 @@ group :test do
   gem "selenium-webdriver", ">= 4.0.0.rc1"
   gem "simplecov"
   gem "simplecov-rcov"
-  gem "shoulda-matchers"
   gem "webdrivers"
 end
 

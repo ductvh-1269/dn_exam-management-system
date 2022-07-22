@@ -1,10 +1,13 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
+  devise :database_authenticatable, :registerable,
+   :rememberable, :validatable, :recoverable, :confirmable
+  # attr_accessor :remember_token
+  after_initialize :init
 
   has_many :subjects, dependent: :destroy
   has_many :exams, dependent: :destroy
 
-  enum role: {admin: 0, user: 1} # %i(admin user)
+  enum role: {admin: 0, user: 1}
   before_save :downcase_email
   validates :first_name, presence: true,
             length: {maximum: Settings.user.name.max_length}
@@ -17,8 +20,7 @@ class User < ApplicationRecord
   validates :password, presence: true,
     length: {minimum: Settings.user.password.min_length},
     if: :password, allow_nil: true
-  validates :role, presence: true
-  has_secure_password
+ # validates :role, presence: true
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
@@ -53,5 +55,9 @@ class User < ApplicationRecord
 
   def downcase_email
     email.downcase!
+  end
+
+  def init
+    self.role ||= 1
   end
 end

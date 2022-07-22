@@ -1,6 +1,6 @@
 class ExamsController < ApplicationController
-  include SessionsHelper
-  before_action :logined_in?
+  #include SessionsHelper
+  before_action :authenticate_user!
   before_action :load_user, only: %i(index create search)
   before_action :load_subject, only: %i(new create)
   before_action :load_questions, :init_exam,
@@ -75,10 +75,6 @@ class ExamsController < ApplicationController
     @user = current_user
   end
 
-  # def exam_params
-  #   params.require(:exam).permit(:user_id, :subject_id, :id)
-  # end
-
   def update_details answers
     score = 0
     (0..9).each do |i|
@@ -91,11 +87,6 @@ class ExamsController < ApplicationController
       @exam.score = score
     end
   end
-
-  # def user_not_correct
-  #   flash[:danger] = t ".user_not_correct"
-  #   redirect_to :root
-  # end
 
   def load_exam
     return if @exam = current_user.exams
