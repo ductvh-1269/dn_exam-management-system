@@ -92,7 +92,8 @@ class ExamsController < ApplicationController
 
   def load_exams
     @pagy, @exams = pagy current_user
-                    .exams.by_key_word_with_relation_tables(params[:query]).recent_exam,
+                    .exams.by_key_word_with_relation_tables(params[:query])
+                    .recent_exam,
                          items: load_per_page(Settings.paging.per_page_5)
   end
 end

@@ -1,5 +1,5 @@
 class SubjectsController < ApplicationController
-  load_and_authorize_resource
+  authorize_resource
   before_action :load_subject, only: :show
 
   def show
@@ -8,7 +8,9 @@ class SubjectsController < ApplicationController
   end
 
   def index
-    @pagy, @subjects = pagy(Subject.active.recent_subjects,
+    @q = Subject.ransack(params[:q])
+    @pagy, @subjects = pagy(@q.result.includes(:questions).active
+                                                .recent_subjects,
                             items: Settings.paging.per_page_15)
   end
 

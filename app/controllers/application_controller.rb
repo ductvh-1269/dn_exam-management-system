@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   before_action :current_ability, unless: :devise_controller?
-  before_action :set_locale, :current_user
+  before_action :set_locale, :current_user, :set_search
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception, prepend: true
 
@@ -45,16 +45,19 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [%i(email first_name last_name password password_confirmation)])
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: [%i(email first_name last_name
+password password_confirmation)])
   end
 
-  private
+  def current_ability
+    controller_name_segments = params[:controller].split("/")
+    controller_name_segments.pop
+    controller_namespace = controller_name_segments.join("/").camelize
+    Ability.new(current_user, controller_namespace)
+  end
 
-def current_ability
-  controller_name_segments = params[:controller].split("/")
-  controller_name_segments.pop
-  controller_namespace = controller_name_segments.join("/").camelize
-  Ability.new(current_user, controller_namespace)
-end
-
+  def set_search
+    @q = Subject.ransack(params[:q])
+  end
 end

@@ -4,7 +4,7 @@ class Ability
   include CanCan::Ability
 
   def initialize user, namespace
-    can :read, Subject
+    can %i(read search), Subject
     return if user.blank?
 
     case namespace

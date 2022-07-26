@@ -1,0 +1,34 @@
+<div class = "row mt-3">
+  <div class = "col-md-10 offset-md-1">
+    <div class="card">
+      <div class="card-body">
+        <div class = "row mt-3">
+          <div class = "col">
+            <%= search_form_for @q, remote: :true do |f| %>
+              <div class = "row">
+                <div class = "col-md-4">
+                  <%= f.label :created_at_start %>
+                  <%= f.search_field :created_at_gteq, class: "form-control", type: "date" %>
+                </div>
+                <div class = "col-md-4">
+                  <%= f.label :created_at_end %>
+                  <%= f.search_field :created_at_lteq, class: "form-control", type: "date" %>
+                </div>
+                <div class = "col-md-4">
+                  <%= f.label :created_at_end %>
+                  <div class="input-group mb-3">
+                    <%= f.search_field :content_or_name_or_questions_content_cont, class: "form-control" %>
+                    <div class="input-group-append">
+                      <%= f.submit class: "btn btn-primary" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
