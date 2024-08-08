@@ -1,0 +1,25 @@
+<div class="row mt-3 mb-3">
+  <div class="card mt-2 col-12">
+    <div class="card-body">
+      <h6 class="card-title mt-2">
+        <%= generate_question_content(index, question.content) %>
+        <hr />
+      </h6>
+      <%= form.fields_for :exam_details, @exam.exam_details.to_a[index] do |f| %>
+        <% question.answers.each do |answer| %>
+          <div class="form-check">
+              <% if question.single_select? %>
+                <%= f.radio_button :selected_answer_id, answer.id %>
+              <% elsif question.multiple_select? %>
+                <%= f.check_box  :selected_answer_id, {multiple: true},answer.id %>
+              <% else %>
+                <%= f.text_area :essay_answer, class: "form-control" %>
+              <% end %>
+            <label class="form-check-label"> <%= answer.content %></label>
+          </div>
+          <br/>
+        <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>

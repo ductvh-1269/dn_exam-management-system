@@ -10,6 +10,7 @@ vi:
       vietnamese: Tiếng Việt
       account: Tài khoản
       log_in: Đăng nhập
+      log_out: "Đăng xuất"
       sign_in: Đăng ký
     footer:
       contact_us: Contact us
@@ -34,3 +35,46 @@ vi:
       sub_title_4: Lorem ipsum dolor sit
       learn_now: Học luôn
       service: Dịch vụ
+  sessions:
+    new:
+      title: "ĐĂNG NHẬP"
+      login: "Đăng nhập"
+      btn_login: "Đăng nhập"
+      email: "Email"
+      password: "Mật khẩu"
+      remember_me: "Ghi nhớ đăng nhập"
+      forgot_password: "Quên mật khẩu"
+    create:
+      invalid_email_password_combination: "Email hoặc mật khẩu không đúng!"
+      user_not_found: "Tên tài khoản hoặc mật khẩu không đúng"
+    load_user:
+      user_not_found: "Không tìm thấy người dùng"
+  exams:
+    question:
+      your_answer: Câu trả lời của bạn
+    new:
+      take_exam: Làm bài trắc nghiệm
+      submit_exam: Nộp bài
+  subjects:
+    index:
+      title: "Bài thi"
+      create_subject: "Tạo bài thi mới"
+    new:
+      title: "Tạo bài thi mới"
+    show:
+      title: "Môn học: "
+      content: "Nội dung: "
+  required_admin: "Tài khoản phải có quyền admin !"
+  require_login: "Vui lòng đăng nhập"
+  admin:
+    subjects:
+      new:
+        title: "Môn học"
+        subject_name: "Tên môn học"
+        subject_content: "Nội dung"
+        create_subject: "Tạo môn học"
+      create:
+        create_failed: "Tạo môn học thất bại"
+        create_noti: "Tạo môn học thành công"
+  shared:
+    error: "Lỗi"

@@ -1,0 +1,12 @@
+<li class="list-group-item">
+  <div class="float-left">
+    <%= link_to subject.name, subject %> |
+    <%= link_to "Lam Bai thi", new_subject_exam_path(subject_id: subject.id) %>
+  </div>
+  <div class="float-right">
+    <%= link_to subject, method: :delete,
+      data: {confirm: t(".confirm_delete")} do %>
+      <i class="fa-solid fa-trash text-danger"></i>
+    <% end %>
+  </div>
+</li>
